@@ -7,31 +7,26 @@ M.general = {
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "beginning of line" },
     ["<C-e>"] = { "<End>", "end of line" },
+    -- Clear highlights of search
+    ["<F7>"] = { "<ESC>:noh <CR>a", "clear highlights" },
 
-    -- navigate within insert mode
-    ["<C-h>"] = { "<Left>", "move left" },
-    ["<C-l>"] = { "<Right>", "move right" },
-    ["<C-j>"] = { "<Down>", "move down" },
-    ["<C-k>"] = { "<Up>", "move up" },
   },
 
   n = {
-    ["<Esc>"] = { ":noh <CR>", "clear highlights" },
-    -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "window left" },
-    ["<C-l>"] = { "<C-w>l", "window right" },
-    ["<C-j>"] = { "<C-w>j", "window down" },
-    ["<C-k>"] = { "<C-w>k", "window up" },
+    -- Clear highlights of search
+    ["<F7>"] = { ":noh <CR>", "clear highlights" },
+    -- switch between vim tabs
+    ["<Tab>"] = { "<cmd> :tabnext <CR>", "Tab left" },
+    ["<S-Tab>"] = { "<cmd> :tabprevious <CR>", "Tab right" },
 
     -- save
-    ["<C-s>"] = { "<cmd> w <CR>", "save file" },
+    ["<F8>"] = { "<cmd> w <CR>", "save file" },
 
     -- Copy all
-    ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
+    ["<C-a>"] = { "<cmd> %y+ <CR>", "copy whole file" },
 
     -- line numbers
-    ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },
-    ["<leader>rn"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
+    ["<F3>"] = { "<cmd> set nu! <CR>", "toggle line number" },
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -70,19 +65,20 @@ M.tabufline = {
 
   n = {
     -- cycle through buffers
-    ["<tab>"] = {
+    ["<C-l>"] = {
       function()
         require("nvchad_ui.tabufline").tabuflineNext()
       end,
       "goto next buffer",
     },
 
-    ["<S-tab>"] = {
+    ["<C-h>"] = {
       function()
         require("nvchad_ui.tabufline").tabuflinePrev()
       end,
       "goto prev buffer",
     },
+    ["<C-o>"] = { ":e ", "Open a file" },
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
@@ -92,6 +88,23 @@ M.tabufline = {
       "close buffer",
     },
   },
+  i = {
+    -- cycle through buffers
+    ["<C-l>"] = {
+      function()
+        require("nvchad_ui.tabufline").tabuflineNext()
+      end,
+      "goto next buffer",
+    },
+
+    ["<C-h>"] = {
+      function()
+        require("nvchad_ui.tabufline").tabuflinePrev()
+      end,
+      "goto prev buffer",
+    },
+    ["<C-o>"] = { "<ESC>:e ", "Open a file" },
+  },
 }
 
 M.comment = {
@@ -99,7 +112,7 @@ M.comment = {
 
   -- toggle comment in both modes
   n = {
-    ["<leader>/"] = {
+    ["<F6>"] = {
       function()
         require("Comment.api").toggle.linewise.current()
       end,
@@ -108,7 +121,7 @@ M.comment = {
   },
 
   v = {
-    ["<leader>/"] = {
+    ["<F6>"] = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "toggle comment",
     },
@@ -247,7 +260,7 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+    ["<F12>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
 
     -- focus
     ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
