@@ -19,7 +19,7 @@ M.hop = {
 }
 M.Rust = {
   n = {
-     ["<leader>w"] = {"<cmd> lua vim.lsp.buf.formatting_sync(nil, 1000)<CR><cmd>w<CR>", "Format Rust Source"},
+     ["<leader>w"] = {"<cmd> lua vim.lsp.buf.format()<CR><cmd>w<CR>", "Format Rust Source"},
   },
 }
 M.useless = {
