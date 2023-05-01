@@ -25,9 +25,9 @@ M.Rust = {
 M.useless = {
   n = {
      -- ["<leader><leader>w"] = {"<cmd><Plug>(easymotion)", "Telescope"},
-     ["è"] = {"`", ""},
-     ["é"] = {"~", ""},
-     ["à"] = {"@", ""},
+     ["è"] = {"`", "Get to a mark"},
+     ["é"] = {"~", "Toggle Case"},
+     ["à"] = {"@", "Replay macro"},
   },
 }
 M.disabled = {
