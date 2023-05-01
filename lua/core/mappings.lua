@@ -5,7 +5,7 @@ local M = {}
 M.general = {
   i = {
     -- go to  beginning and end
-    ["<C-b>"] = { "<ESC>^i", "beginning of line" },
+    ["<C-a>"] = { "<ESC>^i", "beginning of line" },
     ["<C-e>"] = { "<End>", "end of line" },
     -- Clear highlights of search
     ["<F7>"] = { "<ESC>:noh <CR>a", "clear highlights" },
@@ -297,64 +297,21 @@ M.nvterm = {
 
   t = {
     -- toggle in terminal mode
-    ["<A-i>"] = {
+    ["<C-h>"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
       "toggle floating term",
-    },
-
-    ["<A-h>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "toggle horizontal term",
-    },
-
-    ["<A-v>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "toggle vertical term",
     },
   },
 
   n = {
     -- toggle in normal mode
-    ["<A-i>"] = {
+    ["<leader>h"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
       "toggle floating term",
-    },
-
-    ["<A-h>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "toggle horizontal term",
-    },
-
-    ["<A-v>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "toggle vertical term",
-    },
-
-    -- new
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").new "horizontal"
-      end,
-      "new horizontal term",
-    },
-
-    ["<leader>v"] = {
-      function()
-        require("nvterm.terminal").new "vertical"
-      end,
-      "new vertical term",
     },
   },
 }
