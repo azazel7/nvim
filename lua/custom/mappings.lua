@@ -13,8 +13,14 @@ M.abc = {
 M.hop = {
   n = {
      -- ["<leader><leader>w"] = {"<cmd><Plug>(easymotion)", "Telescope"},
-     ["<leader><leader>w"] = {"<cmd> HopWordAC <CR>", "EasyMotion W"},
-     ["<leader><leader>b"] = {"<cmd> HopWordBC <CR>", "EasyMotion B"}
+     ["<leader><leader>w"] = {"<cmd> HopWordAC <CR>", "EasyMotion w"},
+     ["<leader><leader>b"] = {"<cmd> HopWordBC <CR>", "EasyMotion b"},
+     ["<leader><leader>W"] = {"<cmd> HopWORDAC <CR>", "EasyMotion W"},
+     ["<leader><leader>B"] = {"<cmd> HopWORDBC <CR>", "EasyMotion B"},
+     ["<leader><leader>e"] = {"<cmd> HopEndWordAC <CR>", "EasyMotion e"},
+     ["<leader><leader>ge"] = {"<cmd> HopEndWordBC <CR>", "EasyMotion ge"},
+     ["<leader><leader>E"] = {"<cmd> HopEndWORDAC <CR>", "EasyMotion E"},
+     ["<leader><leader>gE"] = {"<cmd> HopEndWORDBC <CR>", "EasyMotion gE"},
   },
 }
 M.Rust = {

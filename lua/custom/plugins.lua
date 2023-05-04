@@ -1,7 +1,8 @@
 local plugins = {
   {
-    "phaazon/hop.nvim", --Modify to have a hop at the end of words
-    cmd = { "HopWordAC", "HopWordBC" },
+    -- "phaazon/hop.nvim",
+    "azazel7/hop.nvim", --Modify to have a hop at the end of words
+    cmd = { "HopWordAC", "HopWordBC", "HopWORDAC", "HopWORDBC", "HopEndWordAC", "HopEndWordBC", "HopEndWORDAC", "HopEndWORDBC", },
     config = function(_)
       require'hop'.setup {}
     end
