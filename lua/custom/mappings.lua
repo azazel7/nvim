@@ -4,6 +4,7 @@ M.abc = {
      -- ["<leader><leader>w"] = {"<cmd><Plug>(easymotion)", "Telescope"},
      ["gp"] = {"`[v`]", "Select Pasted Text"},
      ["<F9>"] = {"<cmd> set invpaste paste?<CR>", "Switch to Paste Mode"},
+     ["<leader><leader>f"] = {"<cmd> :set foldmethod=syntax <CR>", "Activate fold with syntax"},
   },
 
   i = {
@@ -26,6 +27,12 @@ M.hop = {
 M.Rust = {
   n = {
      ["<leader>w"] = {"<cmd> lua vim.lsp.buf.format()<CR><cmd>w<CR>", "Format Rust Source"},
+  },
+}
+M.Telescope = {
+  plugin = true,
+  n = {
+     ["<leader>fv"] = {"<cmd>lua require(\"telescope.builtin\").find_files({cwd=\"~/.config/nvim\"})<CR>", "Telescope in Nvim config"},
   },
 }
 M.useless = {

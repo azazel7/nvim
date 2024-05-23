@@ -39,10 +39,10 @@ M.general = {
 
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
-    ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
+    ["<leader>s"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
-  t = {
+ t = {
     ["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode" },
   },
 
@@ -298,16 +298,6 @@ M.nvterm = {
   t = {
     -- toggle in terminal mode
     ["<C-h>"] = {
-      function()
-        require("nvterm.terminal").toggle "float"
-      end,
-      "toggle floating term",
-    },
-  },
-
-  n = {
-    -- toggle in normal mode
-    ["<leader>h"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
